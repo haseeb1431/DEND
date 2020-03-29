@@ -14,7 +14,7 @@ class LoadDimensionOperator(BaseOperator):
                  redshift_conn_id="redshift",
                  table="",
                  sql_stmt="",
-                 trun=False
+                 trun=False,
                  *args, **kwargs):
 
         super(LoadDimensionOperator, self).__init__(*args, **kwargs)
@@ -35,6 +35,6 @@ class LoadDimensionOperator(BaseOperator):
 
         formatted_sql = f"INSERT INTO {self.table} ({self.sql_stmt})"
         pg_hook.run(formatted_sql)
-        
+
         self.log.info(f"formatted query: {formatted_sql}")
         self.log.info('LoadDimensionOperator {self.table} is now completed')
