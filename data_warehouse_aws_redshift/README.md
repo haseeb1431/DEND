@@ -1,0 +1,1 @@
+## Project for AWS Redshift data warehouse
